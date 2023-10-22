@@ -1,4 +1,4 @@
-package src.test.java.com.medcareer.demo;
+package com.medcareer.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
