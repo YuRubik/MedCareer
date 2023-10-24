@@ -18,7 +18,8 @@ nav ul {
 }
 
 nav li {
-    margin-right: 10px; /* 为列表项之间添加间距 */
+    padding-right: 5vw; /* 为列表项之间添加间距 */
+    align-self: center;
 }
 
 nav a {
@@ -47,3 +48,85 @@ nav button:hover {
     color: #fff; /* 设置悬停时的文本颜色 */
 }
 
+.Poster {
+    position: absolute;
+    right: 0;
+    width: 50vw;
+    z-index: 1;
+}
+
+@font-face {
+    font-family: 'AlimamaShuHeiTi-Bold';
+    src: url('../resources/FontFamily/Alimama_ShuHeiTi_Bold.ttf') format('truetype'); /* 根据字体文件的格式选择合适的值 */
+}
+
+.blueMark {
+    color: #2077f7;
+    pointer-events: none;
+}
+
+.Slogan {
+    color: #272727;
+    font-family: 'AlimamaShuHeiTi-Bold', 'sans-serif';
+    height: 35px;
+    font-weight: bold;
+    font-size: 2.5vw;
+    letter-spacing: 5px;
+}
+
+.HighLight {
+    color: #F83131;
+    font-family: 'AlimamaShuHeiTi-Bold', 'sans-serif';
+    height: 35px;
+    font-weight: bold;
+    position: relative;
+    letter-spacing: 5px;
+    font-size: 2.5vw;
+    z-index: 1; /* 设置文本的堆叠顺序，确保在图片之上 */
+}
+
+.search-input {
+    background-image: url("../resources/Img/search.png");
+    background-repeat: no-repeat;
+    background-position: 2vw,3vh;
+    flex: 1;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    border-radius: 10px;
+    font-size: 24px; /* 设置字体大小 */
+    height: 10vh;
+    width:40vw;
+    padding-left: 5vw;
+}
+
+/* 自定义占位文本的样式 */
+.search-input::placeholder {
+    color: #999; /* 设置文本颜色 */
+    font-size: 18px; /* 设置字体大小 */
+    line-height: 8vh;
+    position: absolute;
+    top: 4vh;
+    left: 5vw;
+}
+
+.search-button {
+    background-color: #F83131;
+    color: #fff;
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 10.6vh;
+    width: 12vw;
+    cursor: pointer;
+    position: absolute;
+    left: 38vw;
+    top: -2px;
+    font-size: 35px;
+}
+
+.search-bar {
+    z-index: 2;
+    position: absolute;
+    top: 40vh;
+    left: 3vw;
+}
