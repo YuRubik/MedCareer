@@ -1,29 +1,26 @@
 import React from 'react';
 import '../css/Home.css';
 import {Link} from "react-router-dom";
+import {Button, Layout} from "antd";
 
 export function HomeHead(){
     return (
-        <header>
-            <nav style={{marginLeft: '2vw'}}>
-                <ul style={{paddingRight: "25vw"}}>
-                    <img style={{paddingRight: '5vw'}} src={require("../resources/Img/MedCareerLogo.png")} alt={"MedCareer Logo"}></img>
-                    <li><a className={"blueMark"} href="/">首页</a></li>
-                    <li><a href="/position">课程</a></li>
-                    <li><a href="/position">职位</a></li>
-                </ul>
-                <ul>
-                    <li style={{paddingRight: '1vw'}}><button>切换为招聘者</button></li>
-                    <li><button onClick={() => {}}>登录/注册</button></li>
-                </ul>
-            </nav>
-        </header>
+        <Layout.Header className={"header"}>
+            <img style={{width: '8vw', height:'4.5vh', marginRight: '6vh', marginTop:'1vh'}} src={require("../resources/Img/MedCareerLogo.png")} alt={"MedCareer Logo"}></img>
+            <Link className={"li"} to='/'>首页</Link>
+            <Link className={"li"} to='/teacher'>课程</Link>
+            <Link className={"li"} to='/WorkExperience'>职位</Link>
+            <div  style={{marginRight:'18vw'}}></div>
+            <Button className={"Button"} onClick={()=>{}}>切换为招聘者</Button>
+            <Button className={"Button"} onClick={()=>{}}>登录/注册</Button>
+        </Layout.Header>
     )
 }
 
+
 export default function Home() {
     return (
-        <div style={{marginLeft:"6vw"}}>
+        <div>
             <HomeHead></HomeHead>
             <div style={{display:"flex", position:"relative", width:'94vw', height:'80vh'}}>
                 <div style={{marginLeft:'5vw'}}>
@@ -37,9 +34,9 @@ export default function Home() {
                     </div>
                     <span className={"Slogan"}>智能职前教育与人才平台</span>
                 </div>
-                <div className="search-bar">
+                <div className="search-bar" style={{zIndex: 2}}>
                     <input className="search-input" type="text" id="searchText" placeholder="1200w+个急招职位在等你"></input>
-                    <button className="search-button" id="searchButton">开始探索</button>
+                    <Button className="search-button" id="searchButton">开始探索</Button>
                 </div>
                 <img className={"Poster"} src={require('../resources/Img/HomePoster.png')} alt={"MedCareer Poster"}/>
             </div>
