@@ -1,37 +1,40 @@
 /* 将导航链接水平排列 */
-.header {
+#header {
     display: flex;
     background-color: #FFFFFF; /* 设置导航栏背景颜色 */
     padding: 10px; /* 设置导航栏内边距 */
-    height: 90px;
-    margin-left:6vw;
+    height: 11vh;
+    left: 6vw;
     width:100vw;
-    z-index: 10
+    z-index: 10;
 }
 
 .li {
     padding-right: 6vw; /* 为列表项之间添加间距 */
     align-self: center;
+    font-family: "PingFang SC", sans-serif;
 }
 
 .Button {
     width: 8vw;
-    height: 6vh;
+    height: 5vh;
     border-radius: 6px;
     border: 2px solid #2077F7;
     color: #2077F7;
     background-color: #FFFFFF; /* 设置默认背景颜色 */
     margin-right: 2vw;
-    margin-top: 1vh;
+    margin-top: 2vh;
     font-size: 0.8vw;
     z-index: 1;
+    font-family: "PingFang SC", sans-serif;
 }
 
 
 /* 按钮悬停时的样式 */
 .Button:hover {
     background-color: #2077F7; /* 设置悬停时的背景颜色 */
-    color: #fff; /* 设置悬停时的文本颜色 */
+    border: #2077f7;
+    color: #FFFFFF !important;;
     cursor: pointer;
 }
 
@@ -73,52 +76,99 @@
     z-index: 1; /* 设置文本的堆叠顺序，确保在图片之上 */
 }
 
-.search-input {
-    background-image: url("../resources/Img/search.png");
-    background-repeat: no-repeat;
-    background-position: 2vw,3vh;
-    flex: 1;
-    border: none;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
-    border-radius: 10px;
-    font-size: 24px; /* 设置字体大小 */
-    height: 10vh;
-    width:40vw;
-    padding-left: 5vw;
-}
-
-/* 自定义占位文本的样式 */
-.search-input::placeholder {
-    color: #999; /* 设置文本颜色 */
-    font-size: 1vw; /* 设置字体大小 */
-    line-height: 8vh;
-    position: absolute;
-    left: 5vw;
-}
-
-.search-button {
-    background-color: #F83131;
-    color: #fff;
-    border: none;
-    /*border-bottom-right-radius: 10px;*/
-    /*border-top-right-radius: 10px;*/
-    border-radius: 0 10px 10px 0;
-    height: 10.6vh;
-    width: 12vw;
-    cursor: pointer;
-    position: absolute;
-    left: 38vw;
-    top: -2px;
-    font-size: 2vw;
-}
-
-.search-button:hover {
-    color: white;
-}
 
 .search-bar {
     z-index: 2;
     position: absolute;
     top: 40vh;
-    left: 3vw;
+    left: 10vw;
+    display: flex;
+}
+
+.search-input {
+    background-image: url("../resources/Img/HomeImg/search.png");
+    background-repeat: no-repeat;
+    background-position: 2vw,3vh;
+    flex: 1;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    border-radius: 10px 0 0 10px ;
+    font-size: 1vw; /* 设置字体大小 */
+    height: 10vh;
+    width:40vw;
+    padding-left: 5vw;
+}
+
+.search-input:focus{
+    outline: none;
+}
+
+.search-button {
+    height: 10.1vh;
+    width:12vw;
+    margin-left: -0.5vw;
+    border-radius: 0 10px 10px 0;
+    background-color: #F83131;
+    border: 0 none;
+    color: white;
+    font-size: 1.5vw;
+}
+
+.search-button:hover {
+    color: white!important;
+}
+
+
+.middleSlogan{
+    position:absolute;
+    z-index: 3 ;
+    left:43vw;
+    margin-top: 8vh;
+    font-weight: bold;
+    font-family: "PingFang SC", sans-serif;
+    text-align: center;
+    font-size: 1.8vw;
+    color: #272727;
+    text-space: 2vw;
+}
+
+.LabelBuilder {
+    position: absolute;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 添加阴影效果 */
+    border-radius: 10px;
+    font-size: 1.1vw; /* 设置字体大小 */
+    height: 7vh;
+    width:46vw;
+    left: 27vw;
+    padding-left: 20px;
+
+}
+
+.LabelBuilder ::placeholder{
+    color: #A1A1A1;
+    font-family: "PingFang SC", sans-serif;
+}
+
+.LabelButton {
+    position: absolute;
+    height: 4.5vh;
+    width: 6vw;
+    border-radius: 7px;
+    background-color: #2077f7;
+    color: white;
+    font-size: 0.9vw;
+    right: 28vw;
+    margin-top: 1.2vh;
+    font-family: "PingFang SC", sans-serif;
+}
+
+.LabelButton:hover{
+    color: white!important;
+}
+
+.redBlue {
+    width: 100vw;
+    height: 80vh;
+    background: linear-gradient(269deg, #2077F7, #F83131)
 }
