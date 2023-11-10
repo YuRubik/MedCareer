@@ -1,10 +1,12 @@
 package com.medcareer.demo.controller;
 
 import com.medcareer.demo.entity.User;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 @org.springframework.web.bind.annotation.RestController
+@Tag(name = "Rest_Controller")
 @RequestMapping("controller")
 @Slf4j
 public class RestController {
@@ -20,7 +22,8 @@ public class RestController {
     }
 
     @GetMapping("/user")
-    public User getUser(@RequestParam(name = "person", required = false, defaultValue = "rubik") String name, @RequestParam int age){
+    public User getUser(@RequestParam(name = "person", required = false, defaultValue = "rubik")
+                            String name, @RequestParam int age){
         User user = new User();
         user.setName(name);
         user.setAge(age);

@@ -9,10 +9,12 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class SpringDocConfigurer {
+
+    //springdoc url:http://localhost:8080/swagger-ui/index.html#/
+
     @Bean
     public OpenAPI createRestApi(){
-        return new OpenAPI().info(info()).externalDocs(new ExternalDocumentation().description("muyou")
-                .url("https://docs.google.com/document/d/1P5UfRDZV0PBIoI8-DstGF1t6s3UBut4H2Ty5tN9cXxc/edit"));
+        return new OpenAPI().info(info());
     }
 
     private Info info(){

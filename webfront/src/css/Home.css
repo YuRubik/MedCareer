@@ -172,3 +172,195 @@
     height: 80vh;
     background: linear-gradient(269deg, #2077F7, #F83131)
 }
+
+.redPink {
+    margin-left: 0.4vw;
+    margin-top: 0.8vh;
+    width: 3.5vw;
+    height: 11.4vh;
+    background: linear-gradient(-7deg, #FFA8A9,  #FF6767);
+    border: 1px solid #F85C5C;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+}
+.degree {
+    margin-top: 3vh;
+    align-self: center;
+    justify-self: center;
+    font-size: 1vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: 800;
+    color: #FFFFFF;
+}
+.fitness {
+    margin-top: 0.2vh;
+    align-self: center;
+    font-size: 0.65vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.company {
+    width: 11vw;
+    margin-top: 3vh;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: bold;
+    font-size: 0.9vw;
+    background: #FFFFFF;
+    border-radius: 3px;
+    white-space: normal;
+}
+
+.salary {
+    font-size: 16px;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: bold;
+    color: #2077F7;
+    line-height: 35px;
+}
+
+.personalInfo {
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.InfoName {
+    margin-top: 0.25vh;
+    margin-left: 0.5vw;
+    font-size: 0.75vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: 500;
+    color: #8A94A4;
+}
+
+.InfoDetail{
+    margin-left: 1.2vw;
+    margin-top: 0.2vh;
+    font-size: 0.8vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: 500;
+    color: #272727;
+}
+
+.MoreButton {
+    width: 8vw;
+    height: 5vh;
+    border-radius: 6px;
+    border: 2px solid #2077F7;
+    color: #FFFFFF;
+    background-color: #2077F7; /* 设置默认背景颜色 */
+    margin-left: 6vw;
+    margin-top: 4vh;
+    font-size: 0.8vw;
+    z-index: 1;
+    font-family: "PingFang SC", sans-serif;
+}
+
+.ourService {
+    font-size: 1.6vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: bold;
+    color: #272727;
+    line-height: 35px;
+    margin-left: 1.2vw;
+}
+
+.serviceBackground {
+    z-index: 10;
+    position: relative;
+    top: 30vh;
+    color: #FF6767;
+    width: 18vw;
+    height: 8vh;
+    background: #FFFFFF;
+    box-shadow: 0 2px 22px 2px rgba(228,236,247,0.6);
+    border-radius: 0 0 3px 3px;
+}
+.MainTitle {
+    width: 20vw;
+    position: relative;
+    top: -1.2vh;
+    left: 1vw;
+    font-size: 30px;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: 800;
+    color: #2675F1;
+    line-height: 21px;
+    vertical-align: top;
+}
+
+.SubTitle {
+    position: relative;
+    top: 1vh;
+    left: 1vw;
+    font-size: 1.2vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: 800;
+    color: #252525;
+    line-height: 21px;
+}
+
+.Phone {
+    position: relative;
+    left: 0.6vw;
+    top: -0.5vh;
+    font-size: 1.2vw;
+    font-family: 'HarmonyOS Sans SC', serif;
+    font-weight: 900;
+    color: #FFFFFF;
+
+}
+
+.WorkDay {
+    font-size: 0.7vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: 500;
+    color: #9BA0A8;
+    line-height: 35px;
+    margin-left: 2.5vw;
+}
+.MailAddress {
+    margin-top: 8.8vh;
+    margin-left: 5vw;
+}
+
+.MailAddressText {
+    font-size: 0.9vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: 500;
+    color: #9BA0A8;
+    line-height: 35px;
+    position: relative;
+    top: -0.5vh;
+    margin-left: 0.5vw;
+}
+
+.FriendCooperation {
+    font-size: 0.9vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: 35px;
+    margin-right: 3vw;
+}
+
+.CooperationLink {
+    font-size: 0.8vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: 500;
+    color: #9BA0A8;
+    line-height: 35px;
+    margin-right: 3vw;
+}
+.CopyRight {
+    position: relative;
+    font-size: 0.9vw;
+    font-family: "PingFang SC", sans-serif;
+    font-weight: 500;
+    color: #9BA0A8;
+    line-height: 35px;
+    margin-left: 20vw;
+    top: 2vh;
+}

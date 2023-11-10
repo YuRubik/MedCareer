@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
 import '../css/Home.css';
 import {Link} from "react-router-dom";
-import { DownOutlined, UserOutlined} from '@ant-design/icons';
+import { DownOutlined, UserOutlined, StarOutlined, StarFilled} from '@ant-design/icons';
 import {Button, Dropdown, Layout, MenuProps, message, Space} from "antd";
+import {ScrollView} from "react-native";
 
 export function HomeHead(){
     return (
@@ -53,6 +54,121 @@ export function SearchBar(){
     )
 }
 
+export function InfoBlock(name:string, salary:string, logo:string, fitness:string,
+                          education:string, skill:string, experience:string, link:string) {
+    const [isIconVisible, setIsIconVisible] = useState(true);
+    const handleButtonClick = () => {
+        setIsIconVisible(!isIconVisible);
+    };
+    const handleRedirect = () => {
+        window.location.href = link; // 跳转到指定的网页
+    };
+    const mark = (isIconVisible ? <Button icon={<StarOutlined />} onClick={()=>{handleButtonClick()}}></Button> :
+        <Button icon={<StarFilled />} onClick={()=>{handleButtonClick()}}></Button>)
+    return (
+        <div style={{width:"60vw", height:"13vh", background: "white", marginBottom:'5vh',
+            display:'flex', boxShadow:'0px 2px 22px 2px rgba(228,236,247,0.56', borderRadius:3}}>
+            <div className={"redPink"}>
+                <span className={"degree"}>{fitness}%</span>
+                <span className={"fitness"}>适配度</span>
+            </div>
+            <img style={{width:'4.2vw', height:'8vh', marginTop:'2.5vh', marginLeft:'2.5vw',
+                marginRight:'2.5vw'}} src={require(`../resources/Img/HomeImg/${logo}`)} alt={'logo'}></img>
+            <div style={{display:'flex', flexDirection:'column'}}>
+                <span className={"company"}>{name}</span>
+                <span className={"salary"}>{salary}</span>
+            </div>
+            <div style={{display:"flex", flexDirection:"column", marginTop:'2.1vh', marginLeft:'3.5vw', width:'12vw'}}>
+                <div className={"personalInfo"}>
+                    <img src={require("../resources/Img/HomeImg/学历.png")} alt={"学历"}></img>
+                    <div className={"InfoName"}>学&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;历</div>
+                    <div className={"InfoDetail"}>{education}</div>
+                </div>
+                <div className={"personalInfo"}>
+                    <img src={require("../resources/Img/HomeImg/技能.png")} alt={"技能"}></img>
+                    <div className={"InfoName"}>技&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;能</div>
+                    <div className={"InfoDetail"}>{skill}</div>
+                </div>
+                <div className={"personalInfo"}>
+                    <img src={require("../resources/Img/HomeImg/工作经验.png")} alt={"工作经验"}></img>
+                    <div className={"InfoName"}>工作经验</div>
+                    <div className={"InfoDetail"}>{experience}</div>
+                </div>
+            </div>
+            <Button className={"MoreButton"} onClick={()=>{
+                handleRedirect()
+            }}>了解详情</Button>
+            <div style={{marginLeft:"2vw", marginTop:"4.8vh"}}>
+                {mark}
+            </div>
+        </div>
+    )
+}
+
+export function Service(img:string, titleMain:string, titleSub:string, link: string){
+    const handleRedirect = () => {
+        window.location.href = link; // 跳转到指定的网页
+    };
+    return(
+        <div style={{position:'relative', flexDirection:'column'}}>
+            <img src={require(`../resources/Img/HomeImg/${img}`)} style={{width:'18vw',height:'30vh', position: "absolute"}} alt={titleMain}/>
+            <div className={"serviceBackground"}>
+                <div className={"MainTitle"}>{titleMain}</div>
+                <div style={{display:'flex'}}>
+                    <div className={"SubTitle"}>{titleSub}</div>
+                    <img style={{position:'relative', top:"0.7vh", left:'7vw'}} src={require("../resources/Img/HomeImg/arrow.png")} onClick={()=>{handleRedirect()}} alt={""}></img>
+                </div>
+            </div>
+        </div>
+    )
+
+}
+
+export function HomeFooter(){
+    return (
+        <div style={{background:'#2D343F', height:'45vh', marginTop:'-2vh'}}>
+            <div style={{display:'flex', position:'relative', top:'6vh', left:'20vw'}}>
+                <div style={{display: 'flex', flexDirection:'column'}}>
+                    <img src={require("../resources/Img/HomeImg/底部logo.png")} alt={""}></img>
+                    <div style={{marginTop:'3vh'}}>
+                        <img src={require("../resources/Img/HomeImg/电话.png")} alt={""}></img>
+                        <span className={"Phone"}>400-0645-556</span>
+                    </div>
+                    <div className={"WorkDay"}>工作日 08:00-17:00</div>
+                </div>
+                <div className={"MailAddress"}>
+                    <div>
+                        <img src={require("../resources/Img/HomeImg/邮件.png")} alt={""}></img>
+                        <span className={"MailAddressText"}>yizhi@sina.com</span>
+                    </div>
+                    <div>
+                        <img src={require("../resources/Img/HomeImg/地址.png")} alt={""}></img>
+                        <span className={"MailAddressText"}>地址地址地址地址地址地址地址地址</span>
+                    </div>
+                </div>
+                <div style={{marginLeft:'10vw', marginTop:'2vh'}}>
+                    <div style={{width:'7.5vw',height:'12vh', background:"white"}}></div>
+                    <span className={"MailAddressText"} style={{marginLeft:'1.6vw'}}>微信公众号</span>
+                </div>
+                <div style={{marginLeft:'2vw', marginTop:'2vh'}}>
+                    <div style={{width:'7.5vw',height:'12vh', background:"white"}}></div>
+                    <span className={"MailAddressText"} style={{marginLeft:'2vw'}}>微信资讯</span>
+                </div>
+            </div>
+            <div style={{marginTop:'10vh',marginLeft:'20vw'}}>
+                <span className={"FriendCooperation"}>友情链接:</span>
+                <a className={"CooperationLink"} href={"https://www.sucsa.net/"}>链接一</a>
+                <a className={"CooperationLink"} href={"https://www.sucsa.net/"}>链接二</a>
+                <a className={"CooperationLink"} href={"https://www.sucsa.net/"}>链接三</a>
+                <a className={"CooperationLink"} href={"https://www.sucsa.net/"}>链接四</a>
+                <a className={"CooperationLink"} href={"https://www.sucsa.net/"}>链接五</a>
+                <a className={"CooperationLink"} href={"https://www.sucsa.net/"}>链接六</a>
+            </div>
+            <div style={{background:"#404854", height:'1px', width:'60vw', marginLeft:'20vw', marginTop:'2vh'}}></div>
+            <span className={"CopyRight"}>Copyright ©版权所有 2021 医职美好有限公司  XXX备 556323256号</span>
+        </div>
+    )
+}
 
 export default function Home() {
 
@@ -155,8 +271,55 @@ export default function Home() {
                     </div>
                 </div>
                 <div className={"redBlue"}>
-
+                    <img src={require("../resources/Img/HomeImg/浅色MC.png")} style={{width:'100vw',height:'80vh', position: "absolute"}} alt={"("}/>
+                    <div style={{marginLeft:'20vw', height:'60vh',top:'8vh', position: 'relative'}}>
+                        <ScrollView style={{height:640}}>
+                            {InfoBlock("北京宏隆非凡中医药科技有限公司","2.5w ~ 3W 14薪",
+                                "companyLogo.png", "86", "研究生", "口语英语流利",
+                                "8年以上", "https://www.cstdccm.cn/details.php?id=137")}
+                            {InfoBlock("阿里巴巴","3.1w ~ 3.5W 14薪",
+                                "companyLogo.png", "76", "研究生", "会说二外",
+                                "4年以上", "http://alibaba.com.cn/")}
+                            {InfoBlock("腾讯","1.5w ~ 2.3W 14薪",
+                                "companyLogo.png", "53", "本科生", "可远程办公",
+                                "5年以上", "https://www.tencent.com/zh-cn/")}
+                            {InfoBlock("小红书","1.8w ~ 2.7W 14薪",
+                                "companyLogo.png", "32", "大专生", "懂篮球赛规则",
+                                "2年以上", "https://www.xiaohongshu.com/explore")}
+                            {InfoBlock("字节跳动","1.2w ~ 1.5W 14薪",
+                                "companyLogo.png", "21", "大专生", "会基础的编程",
+                                "无要求","https://www.bytedance.com/zh/")}
+                        </ScrollView>
+                    </div>
                 </div>
+                <div style={{height:'85vh'}}>
+                    <div style={{position:'relative', marginLeft:'18vw', marginTop:'8vh', display:'flex'}}>
+                        <img src={require("../resources/Img/HomeImg/我们的服务-元素1.png")} alt={"("}></img>
+                        <div style={{display:'flex', flexDirection:'column', position:'relative', top:"6vh"}}>
+                            <span className={"ourService"}>我们的服务</span>
+                            <span className={"ourService"}>Our Services</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img style={{position:'relative', width:'70vw'}} src={require("../resources/Img/HomeImg/我们的服务-元素2.png")} alt={""}></img>
+                        <img style={{position:'relative',marginTop:'14vh', width:'15vw'}} src={require("../resources/Img/HomeImg/我们的服务-元素3.png")} alt={""}></img>
+                    </div>
+                    <div style={{position:'relative', bottom: "48vh", left: "23vw"}}>
+                        {Service("我的服务-图片1.png", "JOB TRENDS", "求职动态",
+                            "https://lanhuapp.com/web/#/item/project/detailDetach?pid=bc87961d-ea12-44d4-8e23-3318d258565b&project_id=bc87961d-ea12-44d4-8e23-3318d258565b&image_id=d1691d0a-5c81-482d-9e54-cf41fd652dfc&fromEditor=true")}
+                    </div>
+                    <div style={{position:'relative', bottom: "65vh", left: "43.5vw"}}>
+                        {Service("我的服务-图片2.png", "JOB ACTIVITY", "求职活动",
+                            "https://lanhuapp.com/web/#/item/project/detailDetach?pid=bc87961d-ea12-44d4-8e23-3318d258565b&project_id=bc87961d-ea12-44d4-8e23-3318d258565b&image_id=d1691d0a-5c81-482d-9e54-cf41fd652dfc&fromEditor=true")}
+                    </div>
+                    <div style={{position:'relative', bottom: "63vh", left: "64vw"}}>
+                        {Service("我的服务-图片3.png", "BACKGROUND", "背景提升",
+                            "https://lanhuapp.com/web/#/item/project/detailDetach?pid=bc87961d-ea12-44d4-8e23-3318d258565b&project_id=bc87961d-ea12-44d4-8e23-3318d258565b&image_id=d1691d0a-5c81-482d-9e54-cf41fd652dfc&fromEditor=true")}
+                    </div>
+                </div>
+                <img style={{width:'100vw'}} src={require("../resources/Img/HomeImg/底部曲线底色.png")} alt={""}></img>
+                <HomeFooter></HomeFooter>
+
             </Layout.Content>
         </Layout>
     );
