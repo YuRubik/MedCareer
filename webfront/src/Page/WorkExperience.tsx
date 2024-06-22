@@ -1,7 +1,12 @@
-import {HomeHead} from "./Home";
+import {HomeFooter, HomeHead} from "./Home";
+import {Layout} from "antd";
+import React from "react";
 
 export default function WorkExperience(){
     return (
-        <HomeHead></HomeHead>
+        <Layout>
+            <HomeHead></HomeHead>
+            <HomeFooter></HomeFooter>
+        </Layout>
     )
 }

@@ -4,9 +4,9 @@
     background-color: #FFFFFF; /* 设置导航栏背景颜色 */
     padding: 10px; /* 设置导航栏内边距 */
     height: 11vh;
-    left: 6vw;
-    width:100vw;
     z-index: 10;
+    align-items: center;
+    width: 100%;
 }
 
 .li {
@@ -29,13 +29,25 @@
     font-family: "PingFang SC", sans-serif;
 }
 
+.ServiceDiv {
+    position: absolute;
+    top: -10px; /* 根据需要调整位置 */
+    left: 35px; /* 根据需要调整位置 */
+    background: white; /* 可选：添加背景色 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 可选：添加阴影 */
+    z-index: 1000; /* 确保在其他内容上方 */
+}
 
-/* 按钮悬停时的样式 */
-.Button:hover {
-    background-color: #2077F7; /* 设置悬停时的背景颜色 */
-    border: #2077f7;
-    color: #FFFFFF !important;;
-    cursor: pointer;
+.SmallButton {
+    display: block;
+    margin: 10px;
+}
+
+.ant-btn:hover {
+    border: white !important;
+    background-color: #2077F7 !important; /* 悬停时背景颜色为蓝色 */
+    color: #FFFFFF !important; /* 悬停时文字颜色为白色 */
+    font-size: 0.8vw;
 }
 
 .Poster {

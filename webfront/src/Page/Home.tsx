@@ -6,19 +6,39 @@ import {Button, Dropdown, Layout, MenuProps, message, Space} from "antd";
 import {ScrollView} from "react-native";
 
 export function HomeHead(){
+    const [showSmallButtons, setShowSmallButtons] = useState(false);
+
+    const handleServiceClick = () => {
+        setShowSmallButtons(!showSmallButtons);
+    };
+
     return (
         <div id={"header"}>
-            <div style={{marginLeft:'10vw'}}></div>
-            <img style={{height:'5vh',marginTop:'2vh'}} src={require("../resources/Img/HomeImg/MedCareerLogo.png")} alt={"MedCareer Logo"}></img>
-            <div style={{marginLeft:'6vw'}}></div>
+            <div style={{marginLeft: '10vw'}}></div>
+            <img style={{height: '5vh', marginTop: '2vh'}} src={require("../resources/Img/HomeImg/MedCareerLogo.png")}
+                 alt={"MedCareer Logo"}></img>
+            <div style={{marginLeft: '5vw'}}></div>
             <Link className={"li"} to='/'>首页</Link>
-            <Link className={"li"} to='/teacher'>课程</Link>
+            <Link className={"li"} to='/Course'>课程</Link>
+            <div style={{position:"relative"}}>
+                <a className={"li"} onClick={handleServiceClick}>服务</a>
+                {showSmallButtons && (
+                    <div className={"ServiceDiv"}>
+                        <Link className={"SmallButton"} onClick={() => {
+                        }} to={'/Gaojiuwuyou'}>高就无忧</Link>
+                        <Link className={"SmallButton"} onClick={() => {
+                        }} to={'/'}>工作经验</Link>
+                    </div>
+                )}
+            </div>
             <Link className={"li"} to='/WorkExperience'>职位</Link>
-            <div  style={{marginRight:'25vw'}}></div>
-            <Button className={"Button"} onClick={()=>{}}>切换为招聘者</Button>
-            <Button className={"Button"} onClick={()=>{}}>登录/注册</Button>
+            <div style={{marginRight: '10vw'}}></div>
+            <Button className={"Button"} onClick={() => {
+            }}>切换为招聘者</Button>
+            <Button className={"Button"} onClick={() => {
+            }}>登录/注册</Button>
         </div>
-    )
+    );
 }
 
 export function DropButton(name: string, items: MenuProps['items']) {
@@ -127,7 +147,7 @@ export function Service(img:string, titleMain:string, titleSub:string, link: str
 export function HomeFooter(){
     return (
         <div style={{background:'#2D343F', height:'45vh', marginTop:'-2vh'}}>
-            <div style={{display:'flex', position:'relative', top:'6vh', left:'20vw'}}>
+            <div style={{display:'flex', position:'relative', top:'6vh', left:'20vw', width: "70vw"}}>
                 <div style={{display: 'flex', flexDirection:'column'}}>
                     <img src={require("../resources/Img/HomeImg/底部logo.png")} alt={""}></img>
                     <div style={{marginTop:'3vh'}}>
@@ -304,22 +324,21 @@ export default function Home() {
                         <img style={{position:'relative', width:'70vw'}} src={require("../resources/Img/HomeImg/我们的服务-元素2.png")} alt={""}></img>
                         <img style={{position:'relative',marginTop:'14vh', width:'15vw'}} src={require("../resources/Img/HomeImg/我们的服务-元素3.png")} alt={""}></img>
                     </div>
-                    <div style={{position:'relative', bottom: "48vh", left: "23vw"}}>
+                    <div style={{position:'relative', bottom: "48vh", left: "23vw", width:280}}>
                         {Service("我的服务-图片1.png", "JOB TRENDS", "求职动态",
                             "https://lanhuapp.com/web/#/item/project/detailDetach?pid=bc87961d-ea12-44d4-8e23-3318d258565b&project_id=bc87961d-ea12-44d4-8e23-3318d258565b&image_id=d1691d0a-5c81-482d-9e54-cf41fd652dfc&fromEditor=true")}
                     </div>
-                    <div style={{position:'relative', bottom: "65vh", left: "43.5vw"}}>
+                    <div style={{position:'relative', bottom: "65vh", left: "43.5vw",  width:280}}>
                         {Service("我的服务-图片2.png", "JOB ACTIVITY", "求职活动",
                             "https://lanhuapp.com/web/#/item/project/detailDetach?pid=bc87961d-ea12-44d4-8e23-3318d258565b&project_id=bc87961d-ea12-44d4-8e23-3318d258565b&image_id=d1691d0a-5c81-482d-9e54-cf41fd652dfc&fromEditor=true")}
                     </div>
-                    <div style={{position:'relative', bottom: "63vh", left: "64vw"}}>
+                    <div style={{position:'relative', bottom: "63vh", left: "64vw",  width:280}}>
                         {Service("我的服务-图片3.png", "BACKGROUND", "背景提升",
                             "https://lanhuapp.com/web/#/item/project/detailDetach?pid=bc87961d-ea12-44d4-8e23-3318d258565b&project_id=bc87961d-ea12-44d4-8e23-3318d258565b&image_id=d1691d0a-5c81-482d-9e54-cf41fd652dfc&fromEditor=true")}
                     </div>
                 </div>
                 <img style={{width:'100vw'}} src={require("../resources/Img/HomeImg/底部曲线底色.png")} alt={""}></img>
                 <HomeFooter></HomeFooter>
-
             </Layout.Content>
         </Layout>
     );

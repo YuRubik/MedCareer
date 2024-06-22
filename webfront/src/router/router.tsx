@@ -8,6 +8,8 @@ export function load(name: string) {
 const staticRoutes: RouteObject[] = [
     { path: '', element: load('Home.tsx') },
     { path: 'WorkExperience', element: load('WorkExperience.tsx') },
+    { path: 'Course', element: load('Course.tsx') },
+    { path: 'Gaojiuwuyou', element: load('Gaojiuwuyou.tsx') },
 ]
 export function Router() {
     return useRoutes(staticRoutes)
